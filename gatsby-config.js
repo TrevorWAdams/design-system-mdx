@@ -23,10 +23,10 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: "gatsby-plugin-page-creator",
       options: {
         name: `pages`,
-        path: `${__dirname}/src/pages`
+        path: path.resolve(__dirname, `content/pages`),
       }
     },
     'gatsby-transformer-sharp',
