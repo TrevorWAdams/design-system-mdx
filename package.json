@@ -4,8 +4,10 @@
   "version": "1.0.0",
   "author": "Trevor W. Adams <trevorwadams@gmail.com>",
   "dependencies": {
+    "@emotion/core": "^10.0.14",
     "@mdx-js/mdx": "^1.0.21",
     "@mdx-js/react": "^1.0.21",
+    "@theme-ui/presets": "^0.2.0",
     "gatsby": "^2.11.0",
     "gatsby-image": "^2.2.3",
     "gatsby-mdx": "^0.6.3",
@@ -18,7 +20,8 @@
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-helmet": "^5.2.1"
+    "react-helmet": "^5.2.1",
+    "theme-ui": "^0.2.0"
   },
   "keywords": [
     "gatsby"
