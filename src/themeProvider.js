@@ -1,6 +1,6 @@
 import React from "react"
 import { ColorMode, ThemeProvider, Styled } from "theme-ui"
-import theme from "./themes/base"
+import theme from "./themes/simple"
 
 export const wrapRootElement = ({ element }) => (
   <ThemeProvider theme={theme}>
