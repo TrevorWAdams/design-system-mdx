@@ -1,26 +1,44 @@
-import { Link } from 'gatsby'
-import PropTypes from 'prop-types'
-import React from 'react'
+/** @jsx jsx */
+import { jsx, Header, Container, Flex, useColorMode } from "theme-ui"
+import MenuButton from "./menu-button"
+import NavLink from "./nav-link"
+import Button from "./button"
 
-const Header = ({ siteTitle }) => (
-  <div>
-    <div>
-      <h1>
-        <Link
-          to="/" >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </div>
-)
+const modes = ["light", "dark"]
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
+export default ({ menuOpen, setMenuOpen }) => {
+  const [mode, setMode] = useColorMode()
+
+  const cycleMode = e => {
+    const i = modes.indexOf(mode)
+    const next = modes[(i + 1) % modes.length]
+    setMode(next)
+  }
+
+  return (
+    <Header>
+      <Container>
+        <Flex sx={{ justifyContent: "space-between" }}>
+          <Flex>
+            <MenuButton
+              onClick={() => {
+                setMenuOpen(!menuOpen)
+              }}
+            />
+            <NavLink to="/">Home</NavLink>
+          </Flex>
+          <Flex>
+            <Button
+              sx={{
+                ml: 2
+              }}
+              onClick={cycleMode}
+            >
+              {mode}
+            </Button>
+          </Flex>
+        </Flex>
+      </Container>
+    </Header>
+  )
 }
-
-Header.defaultProps = {
-  siteTitle: '',
-}
-
-export default Header

@@ -2,10 +2,27 @@
 // import baseTheme from 'demo-theme/src/gatsby-theme-ui'
 // console.log('base theme', typeof baseTheme, baseTheme)
 
-import colors from '../colors/simple'
-
 const simple = {
-  colors,
+  colors: {
+    text: "#000",
+    background: "#fff",
+    primary: "#07c",
+    header: {
+      text: "inherit",
+      background: "inherit"
+    },
+    modes: {
+      dark: {
+        text: "#fff",
+        background: "#000",
+        primary: "#0cf",
+        header: {
+          text: "inherit",
+          background: "inherit"
+        },
+      }
+    }
+  },
   fonts: {
     body: 'system-ui, sans-serif',
     heading: 'Georgia, serif',
@@ -32,6 +49,10 @@ const simple = {
       fontFamily: "body",
       lineHeight: "body",
       fontWeight: "body"
+    },
+    Header: {
+      color: "header.text",
+      bg: "header.background"
     },
   },
 }
