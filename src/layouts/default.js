@@ -1,18 +1,16 @@
 /** @jsx jsx */
-import { jsx, Container, Styled, Layout, Main, Flex } from "theme-ui"
+import { jsx, Container, Styled, Layout, Main, Flex} from "theme-ui"
 import { useState } from "react"
 import { Global } from "@emotion/core"
 import Header from "../components/header"
 import SEO from "../components/seo"
 import SkipLink from "../components/skip-link"
 import Footer from "../components/footer"
-import Sidebar from "../elements/sidebar"
-import Content from "../elements/content"
-
-import themes from "../themes"
+import {ContentPane, SidebarPane } from "../elements"
 
 const DefaultLayout = props => {
   const [menuOpen, setMenuOpen] = useState(false)
+
   return (
     <Styled.root>
       <SEO {...props} />
@@ -32,7 +30,7 @@ const DefaultLayout = props => {
         <Main>
           <Container>
             <Flex>
-              <Sidebar
+              <SidebarPane
                 onFocus={() => {
                   setMenuOpen(true)
                 }}
@@ -45,9 +43,9 @@ const DefaultLayout = props => {
               >
                 <h2>Sidebar</h2>
                 
-              </Sidebar>
+              </SidebarPane>
 
-              <Content>{props.children}</Content>
+              <ContentPane>{props.children}</ContentPane>
             </Flex>
           </Container>
         </Main>

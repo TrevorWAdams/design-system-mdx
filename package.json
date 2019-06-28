@@ -5,6 +5,7 @@
   "author": "Trevor W. Adams <trevorwadams@gmail.com>",
   "dependencies": {
     "@emotion/core": "^10.0.14",
+    "@emotion/styled": "^10.0.14",
     "@mdx-js/mdx": "^1.0.21",
     "@mdx-js/react": "^1.0.21",
     "@theme-ui/presets": "^0.2.0",

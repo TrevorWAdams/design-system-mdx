@@ -7,7 +7,7 @@ const styles = {
   display: 'inline-block',
   px: 2,
   py: 2,
-  color: 'inherit',
+  color: 'white',
   textDecoration: 'none',
   fontSize: 1,
   fontWeight: 'bold',

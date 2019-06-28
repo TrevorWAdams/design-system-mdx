@@ -4,14 +4,15 @@ import { jsx, Box } from 'theme-ui'
 import { Global } from '@emotion/core'
 import { MDXProvider } from '@mdx-js/react'
 import NavLink from './nav-link'
-import Content from '../sidebar.mdx'
+import SidebarMDX from '../sidebar.mdx'
+import {SidebarPane} from '../elements'
 
 const components = {
   a: NavLink,
 }
 
 export default React.forwardRef(({ fullwidth, ...props }, ref) => (
-  <React.Fragment>
+  <SidebarPane>
     {props.open && (
       <Box
         onClick={props.onClick}
@@ -65,8 +66,8 @@ export default React.forwardRef(({ fullwidth, ...props }, ref) => (
       }}
     >
       <MDXProvider components={components}>
-        <Content />
+        <SidebarMDX />
       </MDXProvider>
     </Box>
-  </React.Fragment>
+  </SidebarPane>
 ))

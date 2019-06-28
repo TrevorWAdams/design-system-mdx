@@ -4,8 +4,7 @@ import NavLink from "./nav-link"
 
 export default () => (
   <Footer>
-    <Flex alignItems="center">
-      <NavLink to="/">Home</NavLink>
+    <Flex>
       <NavLink href="https://github.com/TrevorWAdams/gatsby-themes">
         GitHub
       </NavLink>
