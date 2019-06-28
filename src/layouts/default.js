@@ -5,11 +5,12 @@ import { Global } from "@emotion/core"
 import Header from "../components/header"
 import SEO from "../components/seo"
 import SkipLink from "../components/skip-link"
+import NavLink from "../components/nav-link"
 import Footer from "../components/footer"
 import {ContentPane, SidebarPane } from "../elements"
 
 const DefaultLayout = props => {
-  const [menuOpen, setMenuOpen] = useState(false)
+  const [open, setOpen] = useState(false)
 
   return (
     <Styled.root>
@@ -26,23 +27,25 @@ const DefaultLayout = props => {
       />
       <SkipLink>Skip to content</SkipLink>
       <Layout>
-        <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+        <Header menuOpen={open} setMenuOpen={setOpen} />
         <Main>
           <Container>
             <Flex>
               <SidebarPane
                 onFocus={() => {
-                  setMenuOpen(true)
+                  setOpen(true)
                 }}
                 onBlur={() => {
-                  setMenuOpen(false)
+                  setOpen(false)
                 }}
                 onClick={() => {
-                  setMenuOpen(false)
+                  setOpen(false)
                 }}
+                open={open}
               >
-                <h2>Sidebar</h2>
                 
+                <NavLink to="/">Home</NavLink>
+                <NavLink to="/about/">About</NavLink>
               </SidebarPane>
 
               <ContentPane>{props.children}</ContentPane>

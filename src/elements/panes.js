@@ -33,6 +33,8 @@ const SidebarPane = props => {
     <div
       {...props}
       sx={{
+        display: 'flex',
+        flexDirection: 'column',
         // values referencing scales defined in a theme
         // color: "primary",
         // bg: "gray",
